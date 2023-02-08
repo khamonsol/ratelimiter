@@ -10,4 +10,9 @@ Apache bench (ab) will show the rate limit in action if you have the patience.
 ####
 Notes
 
-burst is the queue size, if we exceed that we will start getting 429's from the throttle endpoint. This will need to be tuned. Unfortunatly, delay=0 is invalid config, so when the queue goes empty, two requests to go back to back without a delay. Hopefully this will fall within burst limits of the upstream host, if not it should be possible to keep the queue primed through other means or lua script. 
+burst is the queue size, if we exceed that we will start getting 429's from the throttle endpoint. 
+This will need to be tuned. Unfortunatly, delay=0 is invalid config, so when the queue goes empty, two requests to go back to back without a delay. 
+Hopefully this will fall within burst limits of the upstream host, if not it should be possible to keep the queue primed through other means or lua script. 
+
+This is a POC. Nginx does not provide a means to sync ratelimits across multiple instances without paying for a commerical lisence.This there is no way to make this HA. 
+Hopefully our big fancy edge load balancer can provide similar functionality with HA capability. Alternatively we can look at HAproxy since HA is right in the name. 
