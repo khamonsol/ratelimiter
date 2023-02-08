@@ -1,6 +1,6 @@
-everse proxy to rate limit outgoing requests
+Reverse proxy to rate limit outgoing requests
 
-best way to test is either to point on curl like: 
+best way to test is either to bang on it with curl like: 
 
 curl http://localhost:1337/throttle OR  curl http://localhost:1337/error
 
